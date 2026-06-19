@@ -3,71 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tienda | EXORCISTMC</title>
+<title>Tienda EXORCISTMC</title>
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:Segoe UI,sans-serif;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
 background:linear-gradient(to bottom,#081423,#050505);
 color:white;
-text-align:center;
-}
-
-h1{
-color:#00d4ff;
-font-size:60px;
-margin-top:40px;
-text-shadow:0 0 20px #00d4ff;
-}
-
-.sub{
-color:#b8e8ff;
-margin-bottom:40px;
+min-height:100vh;
 }
 
 .container{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-padding:20px;
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+text-align:center;
+}
+
+.logo{
+width:220px;
+margin-bottom:20px;
+filter:drop-shadow(0 0 20px #00d4ff);
+}
+
+h1{
+font-size:60px;
+color:#00d4ff;
+text-shadow:0 0 20px #00d4ff;
+margin-bottom:10px;
+}
+
+.sub{
+color:#bfefff;
+margin-bottom:50px;
+font-size:18px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .card{
-width:280px;
 background:rgba(255,255,255,.03);
-border:1px solid rgba(0,212,255,.3);
+border:1px solid rgba(0,212,255,.35);
 border-radius:20px;
 padding:25px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px rgba(0,212,255,.4);
+}
+
+.rank-icon{
+font-size:50px;
+margin-bottom:15px;
 }
 
 .card h2{
-color:#00d4ff;
+margin-bottom:10px;
 }
 
 .price{
-font-size:32px;
+font-size:35px;
 font-weight:bold;
-margin:20px 0;
+margin:15px 0;
 }
 
 .buy{
 display:inline-block;
+padding:12px 25px;
 background:#00d4ff;
 color:black;
-padding:12px 25px;
-border-radius:10px;
 text-decoration:none;
+border-radius:10px;
 font-weight:bold;
+margin-top:15px;
 }
 
 .back{
 display:inline-block;
-margin-top:40px;
-color:#00d4ff;
+margin-top:50px;
+padding:14px 30px;
+background:#00d4ff;
+color:black;
 text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+.aether{
+border-color:#4dc9ff;
+}
+
+.aether h2{
+color:#4dc9ff;
+}
+
+.vitae{
+border-color:#42ff8c;
+}
+
+.vitae h2{
+color:#42ff8c;
+}
+
+.umbra{
+border-color:#b14dff;
+}
+
+.umbra h2{
+color:#b14dff;
+}
+
+.flux{
+border-color:#00d4ff;
+box-shadow:0 0 20px rgba(0,212,255,.2);
+}
+
+.flux h2{
+color:#00d4ff;
+}
+
+footer{
+margin-top:60px;
+color:#777;
 }
 
 </style>
@@ -75,46 +145,69 @@ text-decoration:none;
 
 <body>
 
-<h1>TIENDA</h1>
-
-<div class="sub">
-Apoya el desarrollo de EXORCISTMC
-</div>
-
 <div class="container">
 
-<div class="card">
-<h2>VIP</h2>
+<img src="logo.png" class="logo">
+
+<h1>TIENDA EXORCISTMC</h1>
+
+<p class="sub">
+Obtén rangos exclusivos y desbloquea nuevas ventajas dentro del servidor.
+</p>
+
+<div class="cards">
+
+<div class="card aether">
+<div class="rank-icon">💎</div>
+<h2>AETHER</h2>
 <div class="price">$4.99</div>
-<p>Kit VIP</p>
-<p>Prefijo VIP</p>
-<p>Ventajas exclusivas</p>
+<p>Prefijo exclusivo</p>
+<p>Kit inicial especial</p>
+<p>Ventajas básicas</p>
 <a href="#" class="buy">Comprar</a>
 </div>
 
-<div class="card">
-<h2>MVP</h2>
+<div class="card vitae">
+<div class="rank-icon">🌿</div>
+<h2>VITAE</h2>
 <div class="price">$9.99</div>
-<p>Kit MVP</p>
-<p>Prefijo MVP</p>
-<p>Más beneficios</p>
+<p>Más recompensas</p>
+<p>Beneficios avanzados</p>
+<p>Acceso a extras</p>
 <a href="#" class="buy">Comprar</a>
 </div>
 
-<div class="card">
-<h2>EXORCISTA</h2>
+<div class="card umbra">
+<div class="rank-icon">🌙</div>
+<h2>UMBRA</h2>
 <div class="price">$14.99</div>
-<p>Rango exclusivo</p>
-<p>Cosméticos únicos</p>
-<p>Ventajas premium</p>
+<p>Poderes exclusivos</p>
+<p>Comandos especiales</p>
+<p>Ventajas únicas</p>
+<a href="#" class="buy">Comprar</a>
+</div>
+
+<div class="card flux">
+<div class="rank-icon">⚡</div>
+<h2>FLUX</h2>
+<div class="price">$19.99</div>
+<p>Rango máximo</p>
+<p>Todas las ventajas</p>
+<p>Beneficios exclusivos</p>
 <a href="#" class="buy">Comprar</a>
 </div>
 
 </div>
 
 <a href="index.html" class="back">
-← Volver al inicio
+⬅ Volver al Inicio
 </a>
+
+<footer>
+© 2026 EXORCISTMC
+</footer>
+
+</div>
 
 </body>
 </html>
