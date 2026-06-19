@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -6,115 +7,84 @@
 <title>EXORCISTMC</title>
 
 <style>
+html{
+scroll-behavior:smooth;
+}
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
-font-family:'Segoe UI',sans-serif;
-background:linear-gradient(to bottom,#081423 0%,#050505 100%);
+background:linear-gradient(to bottom,#081423,#050505);
 color:white;
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-overflow:hidden;
 }
 
 .container{
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
 text-align:center;
-width:90%;
-max-width:900px;
 }
 
 .logo{
 width:220px;
-margin-bottom:15px;
-filter:drop-shadow(0 0 25px #00d4ff);
-animation:float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0px);}
+filter:drop-shadow(0 0 20px #00d4ff);
+margin-bottom:20px;
 }
 
 h1{
-font-size:70px;
+font-size:65px;
 color:#00d4ff;
-text-shadow:0 0 25px #00d4ff;
-margin-bottom:10px;
+text-shadow:0 0 20px #00d4ff;
 }
 
 .subtitle{
-font-size:24px;
+font-size:22px;
 color:#b8e8ff;
-margin-bottom:8px;
+margin-top:10px;
 }
 
 .description{
+margin:15px 0 40px;
 color:#d0d0d0;
-margin-bottom:40px;
-font-size:18px;
 }
 
 .server-box{
-background:rgba(255,255,255,0.03);
+background:rgba(255,255,255,.03);
 border:1px solid rgba(0,212,255,.3);
-backdrop-filter:blur(10px);
 border-radius:20px;
-padding:30px;
-box-shadow:0 0 30px rgba(0,212,255,.1);
+padding:25px;
 }
 
 .server{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:25px 0;
+padding:20px 0;
 border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .server:last-child{
-border-bottom:none;
-}
-
-.server-info{
-text-align:left;
-}
-
-.server-title{
-font-size:15px;
-color:#9cdfff;
+border:none;
 }
 
 .server-ip{
-font-size:30px;
+font-size:28px;
 font-weight:bold;
-}
-
-.port{
-margin-top:5px;
-color:#aaa;
 }
 
 .copy-btn{
 background:#00d4ff;
 color:black;
 border:none;
-padding:14px 24px;
+padding:12px 20px;
 border-radius:10px;
 font-weight:bold;
 cursor:pointer;
-transition:.3s;
-}
-
-.copy-btn:hover{
-transform:scale(1.05);
 }
 
 .buttons{
@@ -132,35 +102,68 @@ padding:15px 35px;
 border-radius:12px;
 text-decoration:none;
 font-weight:bold;
-transition:.3s;
 }
 
-.main-btn:hover{
-transform:translateY(-3px);
+#tienda{
+margin-top:100px;
+}
+
+.tienda-title{
+font-size:50px;
+color:#00d4ff;
+margin-bottom:30px;
+text-shadow:0 0 15px #00d4ff;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.card{
+width:280px;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(0,212,255,.3);
+border-radius:20px;
+padding:25px;
+}
+
+.card h3{
+color:#00d4ff;
+font-size:28px;
+}
+
+.price{
+font-size:35px;
+margin:15px 0;
+}
+
+.buy{
+display:inline-block;
+margin-top:15px;
+padding:12px 25px;
+background:#00d4ff;
+color:black;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
 }
 
 .footer{
-margin-top:30px;
+margin-top:80px;
+padding:30px;
 color:#777;
-font-size:14px;
 }
-
-.particle{
-position:absolute;
-background:#00d4ff;
-border-radius:50%;
-opacity:.3;
-pointer-events:none;
-}
-
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-<!-- CAMBIA logo.png POR EL NOMBRE REAL DE TU LOGO -->
 <img src="logo.png" class="logo">
 
 <h1>EXORCISTMC</h1>
@@ -176,30 +179,26 @@ Donde el poder rompe las maldiciones
 <div class="server-box">
 
 <div class="server">
-
-<div class="server-info">
-<div class="server-title">JAVA EDITION</div>
+<div>
+<div>JAVA EDITION</div>
 <div class="server-ip">exorcistmc.holy.gg</div>
 </div>
 
 <button class="copy-btn" onclick="copyJava()">
 Copiar IP
 </button>
-
 </div>
 
 <div class="server">
-
-<div class="server-info">
-<div class="server-title">BEDROCK EDITION</div>
+<div>
+<div>BEDROCK EDITION</div>
 <div class="server-ip">ut02.holy.gg</div>
-<div class="port">Puerto: 19564</div>
+<div>Puerto: 19564</div>
 </div>
 
 <button class="copy-btn" onclick="copyBedrock()">
 Copiar IP
 </button>
-
 </div>
 
 </div>
@@ -209,16 +208,49 @@ Copiar IP
 <a class="main-btn"
 href="https://discord.gg/UvQWpeDnVv"
 target="_blank">
-Discord
-</a>
+Discord </a>
 
 <a class="main-btn"
-href="#"
-target="_blank">
-Tienda
-</a>
+href="#tienda">
+Tienda </a>
 
 </div>
+
+<section id="tienda">
+
+<h2 class="tienda-title">
+TIENDA
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>INVOCADOR</h3>
+<div class="price">$4.99</div>
+<p>Kit exclusivo</p>
+<p>Prefijo especial</p>
+<a href="#" class="buy">Comprar</a>
+</div>
+
+<div class="card">
+<h3>EXORCISTA</h3>
+<div class="price">$9.99</div>
+<p>Más beneficios</p>
+<p>Más recompensas</p>
+<a href="#" class="buy">Comprar</a>
+</div>
+
+<div class="card">
+<h3>ARCÁNGEL</h3>
+<div class="price">$14.99</div>
+<p>Rango premium</p>
+<p>Ventajas únicas</p>
+<a href="#" class="buy">Comprar</a>
+</div>
+
+</div>
+
+</section>
 
 <div class="footer">
 © 2026 EXORCISTMC
@@ -227,7 +259,6 @@ Tienda
 </div>
 
 <script>
-
 function copyJava(){
 navigator.clipboard.writeText("exorcistmc.holy.gg");
 alert("IP Java copiada");
@@ -237,22 +268,6 @@ function copyBedrock(){
 navigator.clipboard.writeText("ut02.holy.gg:19564");
 alert("IP Bedrock copiada");
 }
-
-for(let i=0;i<35;i++){
-let p=document.createElement("div");
-p.classList.add("particle");
-
-let size=Math.random()*4+2;
-
-p.style.width=size+"px";
-p.style.height=size+"px";
-
-p.style.left=Math.random()*100+"vw";
-p.style.top=Math.random()*100+"vh";
-
-document.body.appendChild(p);
-}
-
 </script>
 
 </body>
